@@ -1,6 +1,10 @@
 package com.example.favoriesapp;
 
 import android.os.Bundle;
+import android.webkit.WebResourceRequest;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,6 +12,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.squareup.picasso.Picasso;
 
 public class SecondActivity extends AppCompatActivity {
+
+    WebView youtubeVideo;
 
 
 
@@ -18,6 +24,21 @@ public class SecondActivity extends AppCompatActivity {
         System.out.println("hello");
 
 
+        youtubeVideo = findViewById(R.id.youtube);
+
+        youtubeVideo.setWebViewClient(new WebViewClient() {
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                return false;
+            }
+        });
+
+        WebSettings webSettings = youtubeVideo.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+        webSettings.setLoadWithOverviewMode(true);
+        webSettings.setUseWideViewPort(true);
+
+        youtubeVideo.loadUrl("https://www.youtube.com/embed/YUPN-apRIiY");
 
     }
 
