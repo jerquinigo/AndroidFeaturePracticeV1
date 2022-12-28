@@ -1,6 +1,8 @@
 package com.example.favoriesapp;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -45,7 +47,10 @@ public class SecondActivity extends AppCompatActivity {
 
 
 
-
+    public void goToThirdActivity(View view) {
+        Intent intent = new Intent(this, ThirdActivity.class);
+        startActivity(intent);
+    }
 
 
 
