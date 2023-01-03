@@ -1,5 +1,6 @@
 package com.example.favoriesapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -46,9 +47,15 @@ public class ThirdActivity extends AppCompatActivity {
 
 
 
+
     }
 
 
+
+    public void goToFourthActivity(View view) {
+        Intent intent = new Intent(this, FourthActivity.class);
+        startActivity(intent);
+    }
 
 
 
